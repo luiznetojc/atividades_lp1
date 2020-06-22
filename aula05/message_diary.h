@@ -1,4 +1,4 @@
-#ifndef MESSAGE_DYARY
+#ifndef MESSAGE_DIARY
 #define MESSAGE_DIARY
     struct time
     {
