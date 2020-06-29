@@ -10,7 +10,7 @@ App::App(const std::string& filename) : diary(filename)
 int App::run(int argc, char* argv[])
 {
     if (argc == 1) {
-        return show_usage();
+        return show_usage(argv[0]);
     }
 
     std::string action = argv[1];
@@ -25,7 +25,7 @@ int App::run(int argc, char* argv[])
         list_messages();
     } else if (action == "search") {
     } else {
-        return show_usage();
+        return show_usage(argv[0]);
     }
 
     return 0;
@@ -54,7 +54,9 @@ void App::list_messages()
     }
 }
 
-int App::show_usage()
+int App::show_usage(const std::string nome)
 {
+    std::cout << "Uso: " << nome << " add" << " <mensagem>" << std::endl;
+    std::cout << "Uso: " << nome << " list" << std::endl;
     return 1;
 }
